@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolConvertImageToExcel", "ToolConvertImageToExcel\ToolConvertImageToExcel.csproj", "{B885D361-128F-4318-81CC-18B00B0737BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperGridDemo", "C:\Users\binhnq\OneDrive\Documents\DotNetBar WinForms Samples\SuperGrid\C#\SuperGridDemo.csproj", "{6163BB9E-77CD-4294-A45F-8728A703F4C2}"
-EndProject
 Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "ToolConvertImageToExcel_Setup", "ToolConvertImageToExcel_Setup\ToolConvertImageToExcel_Setup.isproj", "{37D71F33-6710-4FD3-A4B2-CD5B6BA577C3}"
 EndProject
 Global
@@ -28,16 +26,6 @@ Global
 		{B885D361-128F-4318-81CC-18B00B0737BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B885D361-128F-4318-81CC-18B00B0737BB}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{B885D361-128F-4318-81CC-18B00B0737BB}.SingleImage|Any CPU.Build.0 = Release|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
-		{6163BB9E-77CD-4294-A45F-8728A703F4C2}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 		{37D71F33-6710-4FD3-A4B2-CD5B6BA577C3}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
 		{37D71F33-6710-4FD3-A4B2-CD5B6BA577C3}.CD_ROM|Any CPU.Build.0 = CD_ROM
 		{37D71F33-6710-4FD3-A4B2-CD5B6BA577C3}.Debug|Any CPU.ActiveCfg = DVD-5

@@ -49,9 +49,11 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAddToExcel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbbDocument = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btnLoadPosition = new System.Windows.Forms.Button();
             this.btnSavePosition = new System.Windows.Forms.Button();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.btnRemovePosition = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -277,6 +279,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.panel2.Controls.Add(this.btnRemovePosition);
+            this.panel2.Controls.Add(this.cbbDocument);
             this.panel2.Controls.Add(this.btnLoadPosition);
             this.panel2.Controls.Add(this.btnSavePosition);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -286,11 +290,26 @@
             this.panel2.Size = new System.Drawing.Size(670, 44);
             this.panel2.TabIndex = 7;
             // 
+            // cbbDocument
+            // 
+            this.cbbDocument.DisplayMember = "Text";
+            this.cbbDocument.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbDocument.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDocument.FormattingEnabled = true;
+            this.cbbDocument.ItemHeight = 28;
+            this.cbbDocument.Location = new System.Drawing.Point(132, 6);
+            this.cbbDocument.MaxDropDownItems = 100;
+            this.cbbDocument.Name = "cbbDocument";
+            this.cbbDocument.Size = new System.Drawing.Size(213, 34);
+            this.cbbDocument.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbbDocument.TabIndex = 3;
+            this.cbbDocument.Text = "abc";
+            // 
             // btnLoadPosition
             // 
             this.btnLoadPosition.BackColor = System.Drawing.Color.White;
             this.btnLoadPosition.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadPosition.Location = new System.Drawing.Point(132, 5);
+            this.btnLoadPosition.Location = new System.Drawing.Point(351, 5);
             this.btnLoadPosition.Name = "btnLoadPosition";
             this.btnLoadPosition.Size = new System.Drawing.Size(123, 36);
             this.btnLoadPosition.TabIndex = 2;
@@ -314,6 +333,18 @@
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Windows7Blue;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(26))))));
+            // 
+            // btnRemovePosition
+            // 
+            this.btnRemovePosition.BackColor = System.Drawing.Color.White;
+            this.btnRemovePosition.ForeColor = System.Drawing.Color.Black;
+            this.btnRemovePosition.Location = new System.Drawing.Point(480, 5);
+            this.btnRemovePosition.Name = "btnRemovePosition";
+            this.btnRemovePosition.Size = new System.Drawing.Size(123, 36);
+            this.btnRemovePosition.TabIndex = 4;
+            this.btnRemovePosition.Text = "Xóa tọa độ";
+            this.btnRemovePosition.UseVisualStyleBackColor = false;
+            this.btnRemovePosition.Click += new System.EventHandler(this.btnRemovePosition_Click);
             // 
             // Main
             // 
@@ -366,5 +397,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnLoadPosition;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbDocument;
+        private System.Windows.Forms.Button btnRemovePosition;
     }
 }

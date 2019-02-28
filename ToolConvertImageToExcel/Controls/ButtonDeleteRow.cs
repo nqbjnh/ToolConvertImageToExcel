@@ -16,6 +16,7 @@ namespace ToolConvertImageToExcel.Controls
                 var row = EditorCell.GridRow;
                 var superGrid = cell.SuperGrid;
                 superGrid.PrimaryGrid.Rows.Remove(row);
+                Main._TempPosition.RemoveAt(row.Index);
             };
         }
 

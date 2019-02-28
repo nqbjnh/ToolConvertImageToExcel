@@ -27,8 +27,7 @@ namespace ToolConvertImageToExcel
         public bool _mouseClicked { get; set; }
         public string _ImagePath { get; set; }
         public string _TesseractPath { get; set; }
-        public List<Rectangle> _ListPosition { get; set; }
-        public List<Rectangle> _TempPosition { get; set; }
+        public static List<Rectangle> _TempPosition { get; set; }
 
         private DocumentMangament _documentMangament;
         public Main()
@@ -48,10 +47,10 @@ namespace ToolConvertImageToExcel
                 }
                 Directory.CreateDirectory(_ImagePath);
                 
-                _ListPosition = new List<Rectangle>();
                 _TempPosition = new List<Rectangle>();
                 superGridControl1.PrimaryGrid.Columns["CellDeleteRow"].EditorType = typeof(ButtonDeleteRow);
-                _documentMangament = new DocumentMangament();
+                _documentMangament = new DocumentMangament(cbbDocument);
+                cbbDocument.ItemHeight = 28;
             }
             catch (Exception e)
             {
@@ -282,11 +281,10 @@ namespace ToolConvertImageToExcel
                 var gridCell = new GridCell { Value = row.Cells["CellImageContent"].Value };
                 gridRow.Cells.Add(gridCell);
             }
-            //clear bảng 1
+            
             this.superGridControl2.PrimaryGrid.Rows.Add(gridRow);
-            superGridControl1.PrimaryGrid.Rows.Clear();
-            _TempPosition.Clear();
-
+            //clear bảng 1
+            ClearTablePosition();
         }
 
         private void btnExportExcel_Click(object sender, EventArgs e)
@@ -345,22 +343,39 @@ namespace ToolConvertImageToExcel
                     return;
                 }
 
-                _documentMangament.Add(documentName, _TempPosition);
-
-                _ListPosition = new List<Rectangle>();
-                _ListPosition.AddRange(_TempPosition);
+                _documentMangament.Add(documentName, new List<Rectangle>(_TempPosition));
                 MessageBox.Show("Lưu tọa độ thành công", "Thông báo");
             }
         }
 
         private void btnLoadPosition_Click(object sender, EventArgs e)
         {
-            if(!_ListPosition.Any()) return;
-            foreach (var rectangle in _ListPosition)
+            ClearTablePosition();
+            if (pictureBoxImage.Image == null)
             {
+                MessageBox.Show("Bạn chưa tải tài liệu", "Thông báo");
+                return;
+            }
+            var positions = _documentMangament.Get();
+            if (!positions.Any()) return;
+            foreach (var rectangle in positions)
+            {   
                 ConvertImageToText(rectangle);
             }
         }
+
+        private void btnRemovePosition_Click(object sender, EventArgs e)
+        {
+            _documentMangament.Remove();
+        }
+
+        private void ClearTablePosition()
+        {
+            superGridControl1.PrimaryGrid.Rows.Clear();
+            _TempPosition.Clear();
+        }
+
+        
     }
 
 }
