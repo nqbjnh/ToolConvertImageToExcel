@@ -11,12 +11,19 @@ namespace ToolConvertImageToExcel.Controls
         {
             Click += (sender, args) =>
             {
-                var btn = sender as ButtonDeleteRow;
-                var cell = EditorCell;
-                var row = EditorCell.GridRow;
-                var superGrid = cell.SuperGrid;
-                superGrid.PrimaryGrid.Rows.Remove(row);
-                Main._TempPosition.RemoveAt(row.Index);
+                try
+                {
+                    var btn = sender as ButtonDeleteRow;
+                    var cell = EditorCell;
+                    var row = EditorCell.GridRow;
+                    var superGrid = cell.SuperGrid;
+                    superGrid.PrimaryGrid.Rows.Remove(row);
+                    Main._TempPosition.RemoveAt(row.Index);
+                }
+                catch (System.Exception)
+                {
+                    
+                }
             };
         }
 

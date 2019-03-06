@@ -105,6 +105,8 @@ namespace ToolConvertImageToExcel.Services
         {
             try
             {
+                if (_comboBoxEx.SelectedValue == null) return new List<Rectangle>();
+
                 if (_Documents.ContainsKey(_comboBoxEx.SelectedValue.ToString()))
                 {
                     return _Documents[_comboBoxEx.SelectedValue.ToString()];
@@ -115,7 +117,7 @@ namespace ToolConvertImageToExcel.Services
             {
                 MessageBox.Show(e.Message);
             }
-            return null;
+            return new List<Rectangle>();
 
         }
     }

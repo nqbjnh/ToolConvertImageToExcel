@@ -126,13 +126,14 @@ namespace ToolConvertImageToExcel
 
             if (_rectCropArea.Width != 0 && _rectCropArea.Height != 0)
             {
-                _TempPosition.Add(_rectCropArea);
+                
                 ConvertImageToText(_rectCropArea);
             }
         }
 
         private void ConvertImageToText(Rectangle rectangleCrop)
         {
+            _TempPosition.Add(_rectCropArea);
             var imageFileSave = _ImagePath + $"\\{DateTime.Now.Ticks}.jpg";
             var imgCrop = CropImage(rectangleCrop);
             imgCrop.Save(imageFileSave, ImageFormat.Jpeg);
